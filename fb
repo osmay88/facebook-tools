@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+# activate the virtual env
+source ~/bin/facebook-tools/venv/bin/activate
+
+python ~/bin/facebook-tools/fb.py "$@"
