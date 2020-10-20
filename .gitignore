@@ -1,6 +1,7 @@
 # python related files
 venv/
 __pycache__/
+*.egg-info/
 
 
 #vscode files
