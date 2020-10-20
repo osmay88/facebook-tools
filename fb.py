@@ -9,16 +9,16 @@ def cli():
 
 @click.command()
 def creds():
-    app_id = input("Facebook app_id: ")
-    app_secret = input("Facebook app_secret: ")
+    app_id = click.prompt("Facebook app_id: ")
+    app_secret = click.prompt("Facebook app_secret: ")
     click.echo("Storing facebook credentiasl")
     store_credentials(app_id, app_secret)
 
 
 @click.command()
 def pagetoken():
-    user_long_lived_token = input("User long lived access token: ")
-    user_id = input("Facebook user id: ")
+    user_long_lived_token = click.prompt("User long lived access token: ")
+    user_id = click.prompt("Facebook user id: ")
     data = get_page_access_token(user_long_lived_token, user_id)
     for page in data.get('data'):
         click.echo(f"Page name:{page.get('name')} Access_token: {page.get('access_token')}")

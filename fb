@@ -1,6 +1,10 @@
-#!/usr/bin/bash
+#!/bin/bash
+
+# get the current directory 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo $DIR
 
 # activate the virtual env
-source ~/bin/facebook-tools/venv/bin/activate
+source $DIR/venv/bin/activate
 
-python ~/bin/facebook-tools/fb.py "$@"
+python $DIR/fb.py "$@"

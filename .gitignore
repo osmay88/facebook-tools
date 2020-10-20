@@ -1,2 +1,7 @@
+# python related files
 venv/
 __pycache__/
+
+
+#vscode files
+.vscode/
