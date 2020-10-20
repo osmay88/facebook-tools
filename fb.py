@@ -1,5 +1,5 @@
 import click
-from utils import store_credentials
+from cred_utils import store_credentials
 from token_utils import get_page_access_token, get_user_long_lived_token
 
 
