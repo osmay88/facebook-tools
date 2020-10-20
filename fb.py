@@ -22,7 +22,7 @@ def userlonglived():
     click.echo(f"User long lived token: {data}")
 
 
-@click.command(help="Get a page long lived token from.")
+@click.command(help="Get a page long lived token.")
 def pagetoken():
     user_long_lived_token = click.prompt("User long lived access token: ")
     user_id = click.prompt("Facebook user id: ")
