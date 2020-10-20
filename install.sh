@@ -10,6 +10,8 @@ echo "Installing requirements"
 source $DIR/venv/bin/activate
 pip install -r $DIR/requirements.txt
 
+python setup.py install
+
 echo 'Updating BASH path'
 echo 'export PATH=$PATH:$DIR'>>$HOME/.bash_profile
 
