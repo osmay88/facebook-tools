@@ -28,6 +28,7 @@ def pagetoken():
     user_id = click.prompt("Facebook user id: ")
     data = get_page_access_token(user_long_lived_token, user_id)
     for page in data.get('data'):
+        click.echo("")
         click.echo(f"Page name:{page.get('name')} Access_token: {page.get('access_token')}")
         click.echo("")
 
