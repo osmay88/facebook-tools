@@ -1,6 +1,6 @@
 import click
 from utils import store_credentials
-from get_page_token import get_page_access_token, get_user_long_lived_token
+from token_utils import get_page_access_token, get_user_long_lived_token
 
 
 @click.group()

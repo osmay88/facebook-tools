@@ -2,7 +2,7 @@
 import json
 import requests
 from urllib.parse import urljoin
-from utils import get_credentials
+from cred_utils import get_credentials
 
 
 FACEBOOK_API = "https://graph.facebook.com"
