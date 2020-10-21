@@ -36,14 +36,6 @@ def pagetoken():
         click.echo(f"Page name:{page.get('name')} Access_token: {page.get('access_token')}")
         click.echo("")
 
-@click.command(help="Send a text direct message")
-def sendtext():
-    user_id = click.prompt("Recipient ID: ")
-    text = click.prompt("Text: ")
-    access_token = click.prompt("Page access token: ")
-    result = send_text_dm(user_id, text, access_token)
-    click.echo(result)
-
 
 @click.command()
 def debugtoken():

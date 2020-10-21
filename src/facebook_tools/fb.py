@@ -7,7 +7,9 @@ from commands import(
                         pagetoken,
                         userlonglived,
                         sendtext,
-                        debugtoken
+                        debugtoken,
+                        getconversations,
+                        getmessages
                     )
 
 
@@ -21,6 +23,9 @@ cli.add_command(pagetoken)
 cli.add_command(userlonglived)
 cli.add_command(sendtext)
 cli.add_command(debugtoken)
+cli.add_command(getconversations)
+cli.add_command(getmessages)
+
 
 if __name__ == '__main__':
     cli()
