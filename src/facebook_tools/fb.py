@@ -6,7 +6,7 @@ from commands import(
                         creds,
                         pagetoken,
                         userlonglived,
-                        sendtext,
+                        sendmessage,
                         debugtoken,
                         getconversations,
                         getmessages
@@ -21,7 +21,7 @@ def cli():
 cli.add_command(creds)
 cli.add_command(pagetoken)
 cli.add_command(userlonglived)
-cli.add_command(sendtext)
+cli.add_command(sendmessage)
 cli.add_command(debugtoken)
 cli.add_command(getconversations)
 cli.add_command(getmessages)
