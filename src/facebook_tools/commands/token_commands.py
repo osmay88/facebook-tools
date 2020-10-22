@@ -20,25 +20,31 @@ def creds(view):
 
 
 @click.command(help="Get a user long lived access token.")
-def userlonglived():
-    user_token = click.prompt("Facebook user token: ")
-    data = get_user_long_lived_token(user_token)
+@click.option("-t", "--token", type=str, default=None, help="Facebook access token.")
+def userlonglived(token):
+    if not token:
+        token = click.prompt("Facebook user token: ")
+    data = get_user_long_lived_token(token)
     click.echo(f"User long lived token: {data}")
 
 
 @click.command(help="Get a page long lived token.")
-def pagetoken():
-    user_long_lived_token = click.prompt("User long lived access token: ")
+@click.option("-t", "--token", type=str, default=None, help="Facebook access token.")
+def pagetoken(token):
+    if not token:
+        token = click.prompt("User long lived access token: ")
     # user_id = click.prompt("Facebook user id(type 0 to ignore): ", default=None)
-    data = get_page_access_token(user_long_lived_token, None)
+    data = get_page_access_token(token, None)
     for page in data.get('data'):
         click.echo("")
         click.echo(f"Page name:{page.get('name')} Access_token: {page.get('access_token')}")
         click.echo("")
 
 
-@click.command()
-def debugtoken():
-    access_token = click.prompt("facebook access token: ")
-    result = debug_access_token(access_token)
+@click.command(help="Debug a facebook access token")
+@click.option("-t", "--token", type=str, default=None, help="Facebook access token.")
+def debugtoken(token):
+    if not token:
+        token = click.prompt("facebook access token: ")
+    result = debug_access_token(token)
     click.echo(json.dumps(result, indent=2))
